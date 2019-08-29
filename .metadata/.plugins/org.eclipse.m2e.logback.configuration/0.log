@@ -37,3 +37,6 @@
 2019-08-29 11:09:31,245 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\IN-DF-006\Documents\PROJET FINAL\gestion-contentieux\gestionContentieux\src\main\resources
 2019-08-29 11:09:31,253 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2019-08-29 11:09:31,419 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\IN-DF-006\Documents\PROJET FINAL\gestion-contentieux\gestionContentieux\src\test\resources
+2019-08-29 11:09:31,420 [Worker-24] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gestionContentieux
+2019-08-29 11:09:31,433 [Worker-24] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gestionContentieux
+2019-08-29 11:09:31,492 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
