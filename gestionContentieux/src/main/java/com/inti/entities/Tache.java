@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,13 +29,14 @@ public class Tache implements Serializable {
 	private Date dateCreation;
 	private String titre, description;
 	private boolean statutAudience;
-	/*@OneToMany(mappedBy="tache")
-	private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();*/
+	@ManyToOne
+	//private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();
+	private Utilisateur utilisateur;
 	@ManyToOne
 	private Affaire affaire;
 	@ManyToOne
 	private Tribunal tribunal;
-	@OneToMany(mappedBy="tache")
+	@OneToMany(mappedBy="tache", fetch = FetchType.EAGER)
 	private Set<Phase> listePhases=new HashSet<Phase>();
 	
 	public Tache() {}
@@ -79,13 +81,13 @@ public class Tache implements Serializable {
 		this.statutAudience = statutAudience;
 	}
 
-	/*public Set<Utilisateur> getListeAvocats() {
-		return listeAvocats;
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
 	}
 
-	public void setListeAvocats(Set<Utilisateur> listeAvocats) {
-		this.listeAvocats = listeAvocats;
-	}*/
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
 
 	public Affaire getAffaire() {
 		return affaire;

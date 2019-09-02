@@ -1,4 +1,4 @@
-package com.inti.config;
+/*package com.inti.config;
 
 import com.inti.service.impl.AffaireService;
 import com.inti.service.impl.DocumentService;
@@ -39,3 +39,4 @@ public class FactoryService {
 		return sortie;
 	}
 }
+*/

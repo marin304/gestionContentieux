@@ -5,5 +5,5 @@ import java.util.List;
 import com.inti.entities.Affaire;
 
 public interface IAffaireService extends IService<Affaire> {
-	List<Affaire> findAllByStatus(Class<?> classe, int status);
+	List<Affaire> findAllByStatus(int status);
 }

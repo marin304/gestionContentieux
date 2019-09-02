@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +23,7 @@ public class Tribunal implements Serializable {
 	private Long idTribunal;
 	private String adresse, region;
 	private Double fax, tel;
-	@OneToMany(mappedBy="tribunal")
+	@OneToMany(mappedBy="tribunal", fetch = FetchType.EAGER)
 	private Set<Tache> listeTaches=new HashSet<Tache>();
 	
 	public Tribunal() {}

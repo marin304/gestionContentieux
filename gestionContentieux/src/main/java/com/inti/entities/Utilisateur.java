@@ -31,15 +31,10 @@ public class Utilisateur implements Serializable {
 	private String username;
 	private String password;
 	private boolean enabled=true; 
-	/*@OneToMany(mappedBy="utilisateur")
-	private Set<Role> listeRoles=new HashSet<Role>();*/
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="id_user", referencedColumnName="idUtilisateur"), inverseJoinColumns=@JoinColumn(name="id_role", referencedColumnName="idRole"))
 	private Set<Role> listeRoles=new HashSet<>();
-	//@ManyToMany(fetch=FetchType.EAGER)
-	/*@JoinTable(name="user_tache", joinColumns=@JoinColumn(name="id_user", referencedColumnName="idUtilisateur"), inverseJoinColumns=@JoinColumn(name="id_tache", referencedColumnName="idTache"))
-	private Set<Tache> listeTaches=new HashSet<>();*/
-	@OneToMany(mappedBy="utilisateur")
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.EAGER)
 	private Set<Tache> listeTaches=new HashSet<Tache>();
 
 	public Utilisateur() {}

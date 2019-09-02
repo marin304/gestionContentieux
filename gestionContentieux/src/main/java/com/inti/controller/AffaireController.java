@@ -3,15 +3,18 @@ package com.inti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.inti.entities.Affaire;
 import com.inti.service.interfaces.IAffaireService;
 
-@Controller
+@CrossOrigin("*")
+@RestController
 public class AffaireController {
 	@Autowired
 	IAffaireService affaireService;
@@ -31,8 +34,8 @@ public class AffaireController {
 		affaireService.save(affaire);
 	}
 	
-	@RequestMapping(value = "board/{status}", method = RequestMethod.GET)
+	@RequestMapping(value = "cases/statut/{status}", method = RequestMethod.GET)
 	public List<Affaire> findAllByStatus(@PathVariable("status") int status) {
-		return affaireService.findAllByStatus(Affaire.class, status);
+		return affaireService.findAllByStatus(status);
 	}
 }

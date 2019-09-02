@@ -5,5 +5,5 @@ import java.util.List;
 import com.inti.entities.Affaire;
 
 public interface IAffaireDAO {
-	List<Affaire> findAllByStatus(Class<?> c, int statut);
+	List<Affaire> findAllByStatus(int statut);
 }

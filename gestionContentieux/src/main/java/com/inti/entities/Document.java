@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,7 +24,8 @@ public class Document implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	private String nom, description;
-	@OneToOne
+	
+	@ManyToOne
 	private Affaire affaire;
 	
 	public Document() {}

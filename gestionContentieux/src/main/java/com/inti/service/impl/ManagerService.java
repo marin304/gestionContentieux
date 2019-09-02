@@ -2,12 +2,21 @@ package com.inti.service.impl;
 
 import java.util.List;
 
-import com.inti.dao.impl.ManagerDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.inti.dao.interfaces.IDAO;
 import com.inti.service.interfaces.IService;
 
+@Service
+@Transactional
 public class ManagerService<T> implements IService<T> {
-	IDAO<T> DAO = new ManagerDAO<T>();
+
+	@Autowired
+	@Qualifier("daoGeneric")
+	protected IDAO<T> DAO;
 
 	@Override
 	public void save(T obj) {

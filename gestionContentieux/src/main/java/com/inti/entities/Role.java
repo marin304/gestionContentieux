@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,9 +22,7 @@ public class Role implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idRole;
 	private String libelle;
-	/*@OneToMany(mappedBy="role")
-	private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();*/
-	@ManyToMany(mappedBy="role")
+	@ManyToMany(fetch=FetchType.EAGER)
 	private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();
 	
 	public Role() {
