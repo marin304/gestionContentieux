@@ -28,8 +28,8 @@ public class Tache implements Serializable {
 	private Date dateCreation;
 	private String titre, description;
 	private boolean statutAudience;
-	@OneToMany(mappedBy="tache")
-	private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();
+	/*@OneToMany(mappedBy="tache")
+	private Set<Utilisateur> listeAvocats=new HashSet<Utilisateur>();*/
 	@ManyToOne
 	private Affaire affaire;
 	@ManyToOne
@@ -79,13 +79,13 @@ public class Tache implements Serializable {
 		this.statutAudience = statutAudience;
 	}
 
-	public Set<Utilisateur> getListeAvocats() {
+	/*public Set<Utilisateur> getListeAvocats() {
 		return listeAvocats;
 	}
 
 	public void setListeAvocats(Set<Utilisateur> listeAvocats) {
 		this.listeAvocats = listeAvocats;
-	}
+	}*/
 
 	public Affaire getAffaire() {
 		return affaire;

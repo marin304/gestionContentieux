@@ -1,5 +1,6 @@
 package com.inti.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -25,5 +26,4 @@ public class AffaireDAO extends ManagerDAO<Affaire> implements IAffaireDAO {
 
 		return liste;
 	}
-
 }

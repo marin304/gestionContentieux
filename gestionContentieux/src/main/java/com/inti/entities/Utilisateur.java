@@ -6,9 +6,13 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -27,8 +31,14 @@ public class Utilisateur implements Serializable {
 	private String username;
 	private String password;
 	private boolean enabled=true; 
-	@OneToMany(mappedBy="utilisateur")
-	private Set<Role> listeRoles=new HashSet<Role>();
+	/*@OneToMany(mappedBy="utilisateur")
+	private Set<Role> listeRoles=new HashSet<Role>();*/
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="id_user", referencedColumnName="idUtilisateur"), inverseJoinColumns=@JoinColumn(name="id_role", referencedColumnName="idRole"))
+	private Set<Role> listeRoles=new HashSet<>();
+	//@ManyToMany(fetch=FetchType.EAGER)
+	/*@JoinTable(name="user_tache", joinColumns=@JoinColumn(name="id_user", referencedColumnName="idUtilisateur"), inverseJoinColumns=@JoinColumn(name="id_tache", referencedColumnName="idTache"))
+	private Set<Tache> listeTaches=new HashSet<>();*/
 	@OneToMany(mappedBy="utilisateur")
 	private Set<Tache> listeTaches=new HashSet<Tache>();
 
