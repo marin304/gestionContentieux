@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<properties>
 		<springframework.version>4.2.0.RELEASE</springframework.version> <!-- Originellement, 4.2.0.RELEASE -->
-		<springsecurity.version>4.2.7.RELEASE</springsecurity.version> <!-- Originellement, 4.2.7.RELEASE -->
+		<springsecurity.version>5.2.10.RELEASE</springsecurity.version> <!-- Originellement, 4.2.7.RELEASE -->
 	</properties>
 	<dependencies>
 		<!-- Spring MVC -->
